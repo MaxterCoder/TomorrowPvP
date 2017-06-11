@@ -19,9 +19,14 @@ public class NPCTeleport implements Listener {
         Action action = event.getAction();
         BlockFace blockFace = event.getBlockFace();
 
-        TomorrowPvP.getInstance().getLogger().info(String.format("onPlayerInteract x=109, y=69, z=261", player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()));
+        Integer clickX = event.getPlayer().getLocation().getBlockX();
+        Integer clickY = event.getPlayer().getLocation().getBlockY();
+        Integer clickZ = event.getPlayer().getLocation().getBlockZ();
 
-        if (action.equals(Action.RIGHT_CLICK_AIR))
+        TomorrowPvP.getInstance().getLogger().info(String.format("onPlayerInteract x=%d, y=%d, z=%d",
+                clickX, clickY, clickZ));
+
+        //if (action.equals(Action.RIGHT_CLICK_AIR))
 
         player.sendMessage(ChatColor.GREEN + "Welcome back to Spawn!");
 
