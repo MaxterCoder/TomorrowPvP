@@ -7,7 +7,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class TomorrowPvP extends JavaPlugin {
 
+    private static TomorrowPvP instance;
+
     public Permission playerPermission = new Permission("PlayerChatEvent.allowed");
+
+    public static TomorrowPvP getInstance() {
+        return TomorrowPvP.instance;
+    }
 
 
     // region Constructor
@@ -29,6 +35,7 @@ public class TomorrowPvP extends JavaPlugin {
     @Override
     public void onEnable() {
         super.onEnable();
+        TomorrowPvP.instance = this;
         getLogger().info("TomorrowPvP onEnable");
 
         PluginManager pm = getServer().getPluginManager();
