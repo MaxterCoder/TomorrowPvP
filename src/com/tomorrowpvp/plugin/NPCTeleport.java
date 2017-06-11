@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class NPCTeleport implements Listener {
 
+
+
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
 
